@@ -1,0 +1,51 @@
+//
+//  szgjyy.pch
+//  szgjyy_patient
+//
+//  Created by YandL on 16/8/9.
+//  Copyright © 2016年 YandL. All rights reserved.
+//
+
+#ifndef szgjyy_pch
+#define szgjyy_pch
+
+
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import "TXBYKit.h"
+
+
+#define NSEaseLocalizedString(key, comment) [[NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"EaseUIResource" withExtension:@"bundle"]] localizedStringForKey:(key) value:@"" table:nil]
+#define TXBYClassName NSStringFromClass(self.class)
+
+
+#endif
+
+#define DEMO_CALL 1
+
+#define TICK   NSDate *startTime = [NSDate date];
+#define TOCK   NSLog(@"Time: %f", -[startTime timeIntervalSinceNow]);
+
+// 控制器背景颜色
+#define ESGlobalBgColor TXBYColor(239, 239, 239)
+//主颜色
+//#define ESMainColor  TXBYColor(39, 157, 103)
+#define ESMainColor  TXBYColor(30, 130, 210)
+
+// 通过RGB创建颜色
+#define ESColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+// 导航栏的颜色
+#define ESNavigationColor TXBYColor(113, 153, 215)
+// 默认偏好设置
+#define ESUserDefaults [NSUserDefaults standardUserDefaults]
+// SQLite路径
+#define ESSQLitePath [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"db.sqlite"]
+// 文件存储路径
+#define ESSaveDataPath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]
+#define ESFilePath(p) [[NSBundle mainBundle] pathForResource:(p) ofType:nil]
+// 视频码率
+#define ESVideoBitrate @"750"
+
+#endif /* szgjyy_pch */
